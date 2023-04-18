@@ -1,0 +1,29 @@
+global:                                                  #全局配置
+  namespace: "Test" #${Namespace}                                #环境类型，分正式Production和非正式Development两种类型
+
+server:
+  ip: "127.0.0.1"
+  port: 9999
+
+etcd:
+  - ip: "127.0.0.1"
+    port: 2379
+
+database:
+  - type: "mysql"
+    name: "test"
+    host: "127.0.0.1"
+    port: 3306
+    user: "root"
+    pass: "123456"
+    db: "test"
+
+cache:
+  - type: "redis"
+    name: "test"
+    host: "127.0.0.1"
+    port: 6379
+    pass: ""
+    db: 0
+
+

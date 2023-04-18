@@ -1,0 +1,26 @@
+// protoc --go_out=.  --go-grpc_out=. *.proto
+syntax = "proto3";
+
+package gateway;
+option go_package = "./;api";
+
+service Greeter {
+  rpc SyncExternal(SyncExternalReq) returns(SyncExternalRes){}
+  rpc SyncUserPower(SyncUserPowerReq) returns(SyncUserPowerRes){}
+}
+
+message SyncExternalReq {
+  string service_name = 1;
+}
+message SyncExternalRes {
+}
+
+message SyncUserPowerReq {
+  string user_id = 1;
+  int32 power = 2;
+  string path = 3;
+}
+message SyncUserPowerRes {
+}
+
+
